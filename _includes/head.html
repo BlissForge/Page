@@ -1,0 +1,201 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <style>
+  .header .site-title {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    border: none;
+    font-family: "Press Start 2P", cursive;
+    text-decoration: none;
+    position: relative;
+  }
+  .header .site-description {
+    font-size: 20px;
+    display: block;
+    line-height: 1;
+    color: #fff;
+    margin-top: 10px
+  }
+  .header-icons .icon {
+    height: 19px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: all .7s;
+    width: 19px;
+    font-size: 20px;
+    margin: 5px
+  }
+  .header-links .link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15.4px
+  }
+  @media (max-width: 1408px) {
+    /* SMALL SCREENS (INCLUDING SMARTPHONE) */
+    .user {
+      flex-direction: column
+    }
+  }
+  @media (min-width: 320px) {
+    /* SMARTPHONE PORTRAIT */
+    h1 {
+	  margin: .67em 0 .35em 0
+	}
+    .header .site-title {
+	  font-size: 35px;
+	  margin: 0 0 17px 0;
+	  text-shadow: rgb(255 255 255) 0.5px 0.5px 2.2px, rgb(0 255 255) 1px 1px 0, rgb(0 255 255) 2px 2px 0, rgb(0 255 255) 3px 3px 0, rgb(0 255 255) 4px 4px 0, rgb(0 255 255) 5px 5px 0
+	}
+	.header-icons {
+      margin-top: 24.5px
+    }
+	.header-links .link {
+      margin: 12.52px
+    }
+	.header-links {
+	  margin: 10px
+	}
+	.user-image {
+	  width: 60px;
+	  height: 60px
+	}
+	.footer {
+	  letter-spacing: 4px;
+	  font-size: 12px
+	}
+  }
+  @media (min-width: 550px) {
+    /* SMARTPHONE LANDSCAPE */
+    .header .site-title {
+	  font-size: 52.5px;
+	  margin: 0 0 19.5px 0;
+	  text-shadow: rgb(255 255 255) 0.5px 0.5px 5.1px, rgb(0 255 255) 1px 1px 0, rgb(0 255 255) 2px 2px 0, rgb(0 255 255) 3px 3px 0, rgb(0 255 255) 4px 4px 0, rgb(0 255 255) 5px 5px 0, rgb(0 255 255) 6px 6px 0, rgb(0 255 255) 7px 7px 0
+	}
+	.header .site-description {
+      font-size: 30px
+    }
+	.header-icons .icon {
+      height: 28px;
+      width: 28px;
+      font-size: 28px
+    }
+	.header-links .link {
+      font-size: 17px;
+      margin: 13.5px
+    }
+    .user-image {
+      width: 75px;
+      height: 75px
+    }
+	.footer {
+	  letter-spacing: 6px
+	}
+  }
+  @media (min-width: 813px) {
+    /* AVERAGE SCREENS (EXCLUDING SMARTPHONE) */
+    h1 {
+	  margin: .67em 0
+	}
+    .header .site-title {
+	  font-size: 70px;
+	  margin: 0 0 22px 0;
+	  text-shadow: rgb(255 255 255) 0.5px 0.5px 8px, rgb(0 255 255) 1px 1px 0, rgb(0 255 255) 2px 2px 0, rgb(0 255 255) 3px 3px 0, rgb(0 255 255) 4px 4px 0, rgb(0 255 255) 5px 5px 0, rgb(0 255 255) 6px 6px 0, rgb(0 255 255) 7px 7px 0, rgb(0 255 255) 8px 8px 0, rgb(0 255 255) 9px 9px 0, rgb(0 255 255) 10px 10px 0
+	}
+	.header .site-description {
+      font-size: 40px
+    }
+	.header-icons .icon {
+      width: 44px;
+      height: 44px;
+      font-size: 44px;
+	  margin-inline: 7.36px
+    }
+	.header-icons {
+      margin-top: 39.5px
+    }
+	.header-links .link {
+      font-size: 23px;
+      margin: 17px
+    }
+	.header-links {
+	  margin: 15px
+	}
+  }
+  @media (min-width: 1409px) {
+    /* AVERAGE+ SCREENS (EXCLUDING SMARTPHONE) */
+	.contents {
+      margin-left: 0;
+      width: 48%
+    }
+    .contents-right {
+      margin-top: -5%
+    }
+    .contents-right, .images-right {
+      float: right;
+      width: 48%
+    }
+    .images-right img {
+      float: right
+    }
+    .images-left {
+      float: left;
+      width: 48%
+    }
+    .images-left img {
+      float: left
+    }
+  }
+  .devicon-sourcetree-plain.colored, .devicon-unity-plain.colored, .devicon-blender-plain.colored {
+    color: #181616
+  }
+  .devicon-sourcetree-plain:before {
+    content: "\EA08"
+  }
+  .devicon-blender-plain:before {
+    content: "\EA27"
+  }
+  .devicon-unity-plain:before {
+    content: "\E92D"
+  }
+  .devicon-visualstudio-plain:before {
+    content: "\E9F8"
+  }
+  .devicon-sourcetree-original:before, .devicon-sourcetree-plain:before {
+    content: "\EA08"
+  }
+  .devicon-github-original:before, .devicon-github-plain:before {
+    content: "\EA10"
+  }
+  .devicon-trello-plain:before {
+    content: "\ebcf";
+    font-size: 96%
+  }
+  .user {
+    font-size: 60px
+  }
+  .tech {
+    width: 100%;
+	margin: 7px
+  }
+  ol, ul {
+    padding-left: 17px;
+	list-style-type: '\2726';
+	text-indent: 10px
+  }
+  #about, #projects {
+    max-width: 1235px
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+</head>
